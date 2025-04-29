@@ -28,6 +28,7 @@ Automatic lipsync and facial animation tool for Unity (2021+).
 
 Blendshapes are mesh deformations used to animate facial expressions, such as phonemes (speech sounds).
 Phonemes like 'p', 'e', or 'k' are mapped to facial blendshapes to simulate speaking.
+
 ![Blendshapes in Inspector](/docs/images/geppetto_page1_img1.png)
 
 
