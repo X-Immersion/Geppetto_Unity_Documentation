@@ -58,7 +58,7 @@ In animation, a **blendshape of a phoneme** is the transition from a closed mout
 
 ### How to Find Your Blendshapes
 
-When you import your 3D model into the scene, you can find the blendshapes under the **SkinMeshRenderer** component.
+When you import your 3D model into the scene, you can find the blendshapes under the **SkinnedMeshRenderer** component.
 
 ![Sample Scene](/docs/images/geppetto_page4_img1.png)
 
@@ -125,7 +125,7 @@ They allow you to insert emotion changes at specific points in a sentence.
 
 The **emotion tag** accepts the following parameters:
 
-| **Parameter**    | **Type**    | **Description**                                                                                  | **Required** | **Default**  |
+| **Parameter**    | **Type**    | **Description** | **Required** | **Default**  |
 |------------------|-------------|--------------------------------------------------------------------------------------------------|--------------|--------------|
 | `emotion`        | string      | Name of the emotion. Must exist in the emotion glossary.                                         | Yes        | —            |
 | `intensity`      | int (0–100) | Defines how strong the emotion is.                                                               | Optional   | 50           |
@@ -148,11 +148,10 @@ You can also **Enable Auto Emotion Tag** to automatically insert emotion tags du
 ### 2.6 Setup the Meshes and Glossaries
 Use the following fields to configure your phoneme and emotion data, as well as the mesh and blendshapes required for animation generation:
 
-| **Field**                   | **Description**                                                                                                                                             |
+| **Field**                   | **Description** |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Phonemes Glossary**       | Choose the phoneme glossary (provided or created in [Section 2.2](#22-open-the-main-geppetto-windows)) that you want to use to create the animation clip. |
-| **Emotion Glossary** _(Optional)_ | Choose the emotion glossary (provided or created in [Section 2.2](#22-open-the-main-geppetto-windows)) for emotion tagging support.                            |
-| **List Blendshapes**        | Select the blendshapes file provided, named `All ShapeKeys WithJaw`.                                                                                       |
+| **Phonemes Glossary** | Choose the phoneme glossary (provided or created in [Section 2.2](#22-open-the-main-geppetto-windows)) that you want to use to create the animation clip. |
+| **Emotion Glossary** | Choose the emotion glossary (provided or created in [Section 2.2](#22-open-the-main-geppetto-windows)) for emotion tagging support.|
 | **Mesh with Blendshapes**   | Select a GameObject from the Unity scene that has a **SkinnedMeshRenderer** component with the blendshapes list. This will serve as the default mesh and will be automatically used in the **Blink** and **Eye Dart** settings. |
 
 ![Setup glossaries](/docs/images/geppetto_page10_img1.png)
@@ -225,14 +224,14 @@ If the server doesn’t start, ensure the following files are present in `Assets
 If any of these files are missing, please contact [X&Immersion](mailto:contact@xandimmersion.com) to obtain them.
 
 ### 2.11 Save the Generated Animation Clip
-### 2.11.1 Create a New Animation Clip
+#### 2.11.1 Create a New Animation Clip
 ![Create New Animation Clip](/docs/images/geppetto_page16_img1.png)
 
-### 2.11.2 Add to an Existing Animation Clip
+#### 2.11.2 Add to an Existing Animation Clip
 If you want to add lip sync to an existing animation, select the animation here:
 ![Existing Animation Clip](/docs/images/geppetto_page16_img2.png)
 
-### 2.11.3 Apply and Generate
+#### 2.11.3 Apply and Generate
 Once every parameter is set up, click the **Generate** button in the editor. You can see on the console log if there were errors during the phonemes and emotions generation, i.e: an emotion is not listed in the glossary.
 
 ![Apply and Generate 2](/docs/images/geppetto_page16_img4.png)
@@ -352,7 +351,7 @@ This setup enables Geppetto to handle real-time text-to-animation generation thr
 ## 5. Create or Update a Phoneme Glossary Manually
 To define how your 3D character responds to phonemes during lip-sync, you’ll need to create or update a **Phoneme Glossary CSV file**.
 
-#### Steps
+### Steps
 
 1. Start by duplicating the provided example spreadsheet (e.g., `PhonemeGlossary.csv`) and open it in your preferred application, such as **Microsoft Excel**, **Google Sheets**, or another spreadsheet editor.
 
@@ -377,9 +376,7 @@ To define how your 3D character responds to phonemes during lip-sync, you’ll n
 
 4. Continue filling in `Blendshape_Name` and `Blendshape_Value` pairs for each phoneme row. Ensure blendshape names are accurate and consistent with your character’s rig.
 
-5. **Save the File**
-
-   Save the completed spreadsheet as a **CSV (Comma-Separated Values)** file.
+5. Save the completed spreadsheet as a **CSV (Comma-Separated Values)** file.
 
 6. Open the file in a plain text editor to confirm proper formatting:
    - Each row should contain values separated by commas.
